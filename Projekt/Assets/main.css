@@ -1,0 +1,128 @@
+body {
+  background-color: gray;
+  background-image: url("julkalender background.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  justify-content: center;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.front {
+    background-color: red;
+    color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+}
+.container-item {
+    background-color: transparent;
+    perspective: 1000px;
+}
+.back{
+    border-radius: 10px;
+    transform: rotateX('180deg');
+}
+.front,
+.back {
+    position: absolute;
+}
+.container-wrapper {
+    max-width: 768px;
+    width: 768px;
+}
+.container { 
+    display: grid;
+    grid-template-columns: [col] 100px [col] 100px [col] 100px [col] 100px [col] 100px [col] 100px [col] 100px [col] 100px [col] 100px [col] 100px [col] 100px;
+    grid-template-rows: [row] auto [row] auto [row] ;
+  grid-gap: 15px;
+  grid-auto-flow: dense;
+  grid-auto-rows: 100px;
+  grid-auto-columns: 100px;
+  height: 90vh;
+}
+.container-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.title{
+    grid-row: span 2;
+    grid-column: span 3;
+  color: yellow;
+  font-size: 450%;
+  margin-left: 40px;
+  margin: 40px;
+  display: block;
+}
+
+.day1,
+.day10,
+.day14,
+.day15,
+.day23 {
+    grid-row: span 2;
+    font-size: 4rem;
+}
+.day4,
+.day9,
+.day14,
+.day15,
+.day22 {
+    grid-column: span 2;
+
+    font-size: 3rem;
+}
+.day24 {
+    grid-row: span 2;
+    grid-column: span 2;
+
+    font-size:  5rem;
+}
+.day1 .front,
+.day2 .front,
+.day3 .front,
+.day4 .front,
+.day5 .front,
+.day6 .front,
+.day7 .front,
+.day8 .front,
+.day9 .front,
+.day10 .front,
+.day11 .front,
+.day12 .front,
+.day13 .front,
+.day14 .front,
+.day15 .front,
+.day16 .front,
+.day17 .front,
+.day18 .front,
+.day19 .front,
+.day20 .front,
+.day21 .front,
+.day22 .front,
+.day23 .front,
+.day24 .front {
+    position: relative;
+    margin: 10px;
+    font-size: 4rem;
+    display: flex;
+}
+
+.tile {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.back{
+    border-radius: 10px;
+    transform: rotateX('180deg');
+}
