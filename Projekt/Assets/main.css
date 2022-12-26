@@ -1,5 +1,8 @@
+* {
+	box-sizing: border-box;
+	/*this nutrelizes the default style (padding margin) if we have padding+margin 60px and we say box should be 200px, it'll be 260px!*/
+}
 body {
-  background-color: gray;
   background-image: url("julkalender background.png");
   background-size: cover;
 	background-repeat: none;
@@ -33,7 +36,6 @@ body {
     grid-column: span 3;
   color: yellow;
   font-size: 5rem;
-  display: block;
 }
 .day1,
 .day10,
@@ -81,12 +83,14 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
+
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
 .container-item:hover .tile {
 	transform: rotateY(180deg);
 }
+
 .front,
 .back {
 	position: absolute;
@@ -100,48 +104,12 @@ body {
 	align-items: center;
 }
 .front {
-    background-color: red;
+    background-color: #c11f1f;
     color: #fff;
     border-radius: 10px;
 }
 
 .back{
     border-radius: 10px;
-    transform: rotateX('180deg');
-}
-
-.day1 .front,
-.day2 .front,
-.day3 .front,
-.day4 .front,
-.day5 .front,
-.day6 .front,
-.day7 .front,
-.day8 .front,
-.day9 .front,
-.day10 .front,
-.day11 .front,
-.day12 .front,
-.day13 .front,
-.day14 .front,
-.day15 .front,
-.day16 .front,
-.day17 .front,
-.day18 .front,
-.day19 .front,
-.day20 .front,
-.day21 .front,
-.day22 .front,
-.day23 .front,
-.day24 .front {
-    position: relative;
-    margin: 10px;
-    font-size: 4rem;
-    display: flex;
-}
-
-
-.back{
-    border-radius: 10px;
-    transform: rotateX('180deg');
+    transform: rotateY(180deg);
 }
