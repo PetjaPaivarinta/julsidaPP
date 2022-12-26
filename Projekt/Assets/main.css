@@ -1,66 +1,40 @@
 body {
   background-color: gray;
   background-image: url("julkalender background.png");
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  justify-content: center;
-}
-
-html,
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-}
-.front {
-    background-color: red;
-    color: #fff;
-    padding: 50px;
-    border-radius: 10px;
-}
-.container-item {
-    background-color: transparent;
-    perspective: 1000px;
-}
-.back{
-    border-radius: 10px;
-    transform: rotateX('180deg');
-}
-.front,
-.back {
-    position: absolute;
+  background-size: cover;
+	background-repeat: none;
+	padding: 3vh;
+	font-size: 2.5rem;
+	display: flex;
+	justify-content: center;
+	margin: auto;
 }
 .container-wrapper {
     max-width: 768px;
     width: 768px;
 }
-.container { 
-    display: grid;
-    grid-template-columns: [col] 100px [col] 100px [col] 100px [col] 100px [col] 100px [col] 100px [col] 100px [col] 100px [col] 100px [col] 100px [col] 100px;
-    grid-template-rows: [row] auto [row] auto [row] ;
-  grid-gap: 15px;
-  grid-auto-flow: dense;
-  grid-auto-rows: 100px;
-  grid-auto-columns: 100px;
-  height: 90vh;
+.container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+	grid-gap: 15px;
+	grid-auto-flow: dense;
+	grid-auto-rows: 100px;
+	grid-auto-columns: 100px;
+	height: 90vh;
 }
 .container-item {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-
 .title{
     grid-row: span 2;
     grid-column: span 3;
   color: yellow;
-  font-size: 450%;
-  margin-left: 40px;
-  margin: 40px;
+  font-size: 5rem;
   display: block;
 }
-
 .day1,
 .day10,
 .day14,
@@ -84,6 +58,58 @@ body {
 
     font-size:  5rem;
 }
+.day1 .front,
+.day3 .front,
+.day5 .front,
+.day7 .front,
+.day9 .front,
+.day11 .front,
+.day13 .front,
+.day15 .front,
+.day17 .front,
+.day19 .front,
+.day21 .front,
+.day23 .front { 
+	background-color: #35dfe8;
+}
+.container-item {
+    background-color: transparent;
+    perspective: 1000px;
+}
+.tile {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.container-item:hover .tile {
+	transform: rotateY(180deg);
+}
+.front,
+.back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	--webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.front {
+    background-color: red;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.back{
+    border-radius: 10px;
+    transform: rotateX('180deg');
+}
+
 .day1 .front,
 .day2 .front,
 .day3 .front,
@@ -114,14 +140,7 @@ body {
     display: flex;
 }
 
-.tile {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
+
 .back{
     border-radius: 10px;
     transform: rotateX('180deg');
